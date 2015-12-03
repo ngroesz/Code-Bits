@@ -1,7 +1,6 @@
 package Something;
 
 use Moose;
-use RTK::Util::ReasonableParams;
 
 has reported_cable_systems_by_division => (
     is => 'rw', 
@@ -9,8 +8,10 @@ has reported_cable_systems_by_division => (
     default => sub { [] },
 );
 
-sub stuff($self)
+sub stuff
 {
+    my($self) = @_;
+
     $self->dates_checked_by_reported_partner_no->{100} = {'2014-01-01' => 1};
 
     if ($self->dates_checked_by_reported_partner_no->{100}{'2014-01-01'}) {

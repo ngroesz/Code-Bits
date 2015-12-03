@@ -1,7 +1,6 @@
 package Something;
 
 use Moose;
-use RTK::Util::ReasonableParams;
 use Data::Dumper;
 
 has dates_checked_by_reported_partner_no => (
@@ -12,6 +11,8 @@ has dates_checked_by_reported_partner_no => (
 
 sub dates($self)
 {
+    my($self) = @_;
+
     $self->dates_checked_by_reported_partner_no->{XtnDaysByBlahBlah} = {
         first_xtn_day => '2014-01-01',
         last_xtn_day  => '2014-02-01'
